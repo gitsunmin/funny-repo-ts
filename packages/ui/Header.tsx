@@ -1,5 +1,8 @@
-import * as React from "react";
+export type HeaderProps = React.PropsWithChildren<
+  React.HTMLAttributes<HTMLHeadElement>
+>;
 
-export const Header = ({ text }: { text: string }) => {
-  return <h1>{text}</h1>;
+export const Header = (props: HeaderProps) => {
+  const { children, ...others } = props;
+  return <header {...others}>{children}</header>;
 };
